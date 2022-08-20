@@ -1,0 +1,199 @@
+/* rem and em do NOT depend on HTML font size in meade queries
+instead we assume that 1rem = 1em = 16px*/
+
+/* We should use em in meadia queries as rem has some bugs in some browsers when using
+media queries. Rem and em is the same thing basically so it does not have a huge
+impact when using em*/
+
+/**************************/
+/* BELOW 1344px (Smaller desktops)*/
+/**************************/
+
+/* 1350/16 = 84em (rounded) */
+@media (max-width: 84em) {
+  /* From here on you can use rem again as this has to do with the styling 
+  and not hte media queries */
+  .hero {
+    max-width: 120rem;
+  }
+
+  .heading-primary {
+    font-size: 4.4rem;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/**************************/
+/* BELOW 1200px (Landcape tablets)*/
+/**************************/
+
+/* 1200/16 = 75em */
+@media (max-width: 75em) {
+  /* This is where we benefit from using rem throughout the project. now if we
+  simply redeclare the font size in the html element, the enitre projects content
+  will adjust accordingly */
+  html {
+    /* 9px/16px = 56.25% */
+    font-size: 56.25%;
+  }
+
+  /* Here we still assume 1 rem is 10 px */
+  .heading-secondary {
+    font-size: 3.6rem;
+  }
+
+  .heading-tertiary {
+    font-size: 2.4rem;
+  }
+
+  .grid {
+    column-gap: 4.8rem;
+    row-gap: 6.4rem;
+  }
+
+  .header {
+    padding: 0 3.2rem;
+  }
+
+  .hero {
+    gap: 4.8rem;
+  }
+
+  .main-nav-list {
+    gap: 3.2rem;
+  }
+
+  .testimonials-container {
+    padding: 9.6rem 3.2rem;
+  }
+}
+
+/**************************/
+/* BELOW 944px (tablets)*/
+/**************************/
+
+/* 940/16 = 59em */
+@media (max-width: 59em) {
+  html {
+    /* 8px/16px = 50% */
+    font-size: 50%;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 0 8rem;
+    gap: 6.4rem;
+  }
+
+  .hero-text-box,
+  .hero-img-box {
+    text-align: center;
+  }
+
+  .hero-img {
+    width: 60%;
+  }
+
+  .delivered-meals {
+    justify-content: center;
+    margin-top: 3.2rem;
+  }
+
+  .logos img {
+    height: 2.4rem;
+  }
+
+  .step-number {
+    font-size: 7.4rem;
+  }
+
+  .meal-content {
+    padding: 2.4rem 3.2rem 3.2rem 3.2rem;
+  }
+
+  .section-testimonials {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .cta {
+    grid-template-columns: 3fr 2fr;
+  }
+
+  .cta-form {
+    grid-template-columns: 1fr;
+  }
+
+  .btn-form {
+    margin-top: 1.2rem;
+  }
+
+  /* MOBILE NAVIGATION */
+  .btn-mobile-nav {
+    display: block;
+  }
+
+  .main-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    /* This will be to have the nav slide into the screen from the right */
+    transform: translateX(100%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Third is type of animation */
+    transition: all 0.5s ease-in;
+
+    /* Hide the navigation */
+    /* Display none allows no transitions at all */
+    /* display: none; */
+
+    /* This is how we can hide it instead */
+    /* 1. Hide element visually */
+    opacity: 0;
+
+    /* 2. Make unnaccesible to mouse and keyboard*/
+    pointer-events: none;
+
+    /* 3. Hide from screen readers*/
+    visibility: hidden;
+  }
+
+  .nav-open .main-nav {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: translate(0);
+  }
+
+  .nav-open .icon-mobile-nav[name="close-outline"] {
+    display: block;
+  }
+
+  .nav-open .icon-mobile-nav[name="menu-outline"] {
+    display: none;
+  }
+
+  .main-nav-list {
+    flex-direction: column;
+    gap: 4.8;
+  }
+
+  .main-nav-link.nav-cta:link,
+  .main-nav-link.nav-cta:visited {
+    font-size: 3rem;
+  }
+}
