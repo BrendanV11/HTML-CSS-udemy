@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Omnifood Hero Section</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        font-family: "Rubik", sans-serif;
+        color: #fff;
+      }
+
+      .container {
+        margin: 0 auto;
+        width: 1200px;
+      }
+
+      header {
+        /* background-color: orangered; */
+        /* vh Stands for viewport height and it adjusts the size
+        of something according top the available onscreen space
+        on a page NOTE: htere is also one for vw (viewport width)*/
+
+        height: 100vh;
+        position: relative;
+
+        /* This the way to make the background image a bit darker
+        in order to make the text more readable */
+        background-image: linear-gradient(
+            rgba(48, 48, 48, 0.514),
+            rgba(53, 53, 53, 0.562)
+          ),
+          url(hero.jpg);
+        /* This  background-size: cover shrinks to image to fit
+        the entire element*/
+        background-size: cover;
+      }
+
+      nav {
+        font-size: 20px;
+        font-weight: 700;
+        display: flex;
+        justify-content: space-between;
+        padding-top: 32px;
+        /* This is to make gradients */
+        /* background-image: linear-gradient(to right, red, blue); */
+      }
+
+      .header-container {
+        width: 1200px;
+        position: absolute;
+
+        /* In relation to the parent size */
+        left: 50%;
+        top: 50%;
+
+        /* In relation to the element size */
+        transform: translate(-50%, -50%);
+
+        /* background-color: violet; */
+
+        /* text-align: center; */
+      }
+
+      .header-container-inner {
+        width: 50%;
+        /* background-color: blue; */
+      }
+
+      h1 {
+        font-size: 52px;
+        margin-bottom: 32px;
+        line-height: 1;
+      }
+
+      p {
+        font-size: 20px;
+        line-height: 1.6;
+        margin-bottom: 48px;
+      }
+
+      .btn:link,
+      .btn:visited {
+        font-size: 20px;
+        font-weight: 600;
+        background-color: #e67e22;
+        color: #fff;
+        text-decoration: none;
+        /* Inline block because a anchor element is an inline on its own
+        and we dont want that */
+        display: inline-block;
+        padding: 16px 32px;
+        border-radius: 9px;
+      }
+
+      h2 {
+        font-size: 44px;
+        margin-bottom: 48px;
+      }
+
+      section {
+        padding: 96px 0;
+        color: #495057;
+        /* width: 900px; */
+        background-color: #f7f7f7;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="container">
+        <div>LOGO</div>
+        <div>NAVIGATION</div>
+      </nav>
+
+      <div class="header-container">
+        <div class="header-container-inner">
+          <h1>A healthy meal delivered to your door every single day</h1>
+          <p>
+            The smart 365-days-per-year food subscription that will make you eat
+            healthy again. Tailored to yur personal tastes and nutritional
+            needs.
+          </p>
+          <a href="#" class="btn">Start eating well</a>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <div class="text-container">
+        <h2>Some random heading</h2>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut
+          dignissimos quae quia earum optio ab labore consequatur dolorum!
+          Labore maxime nulla architecto iste expedita earum maiores aut in nisi
+          quos? Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+          Voluptate doloribus suscipit autem architecto exercitationem? Sunt
+          voluptates molestiae esse eius, iure nulla deserunt, asperiores itaque
+          impedit omnis, dignissimos magni laborum consequatur.
+        </p>
+      </div>
+    </section>
+  </body>
+</html>
