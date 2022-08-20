@@ -1,0 +1,236 @@
+* {
+  /* This is known as a universal selector (ALL) */
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  color: #444;
+
+  border-top: 10px solid #1098ad;
+  position: relative;
+}
+
+.container {
+  position: relative;
+  width: 800px;
+  margin: 0 auto;
+  /* This means left and right side needs to be even and browser will calculate it */
+}
+
+.main-header {
+  background-color: #e7e7e7;
+  /* padding: 20px;
+  padding-left: 40px;
+  padding-right: 40px; Top and bottom then left and right*/
+  padding: 20px 40px;
+  margin-bottom: 60px;
+  /* height: 80px; */
+}
+
+nav {
+  font-size: 15px;
+}
+
+article {
+  margin-bottom: 60px;
+}
+
+.post-header {
+  margin-bottom: 40px;
+}
+
+aside {
+  background-color: #e7e7e7;
+  border-top: 5px solid #1098ad;
+  border-bottom: 5px solid #1098ad;
+  /* padding-top: 50px;
+  padding-bottom: 50px; */
+  padding: 50px 0;
+  width: 500px;
+}
+
+h1,
+h2,
+h3 {
+  color: #1098ad;
+}
+
+h1 {
+  font-size: 26px;
+  text-transform: uppercase;
+  font-style: italic;
+}
+
+h2 {
+  font-size: 40px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+h2::after {
+  content: "TOP";
+  background-color: #ffe70e;
+  color: #000;
+  font-size: 16px;
+  font-weight: bold;
+  display: inline-block;
+  padding: 5px 10px;
+  position: absolute;
+  top: -10px;
+  right: -25px;
+}
+
+h3 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+
+h4 {
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+p {
+  font-size: 22px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+ul,
+ol {
+  margin-left: 50px;
+  margin-bottom: 20px;
+}
+
+li {
+  font-size: 20px;
+  margin-bottom: 10px;
+  /* display:inline; Makes the list items inline (next to one another*/
+}
+
+li:last-child {
+  margin-bottom: 0;
+}
+
+button {
+  font-size: 22px;
+  padding: 20px;
+  cursor: pointer;
+
+  position: absolute;
+  /* top: 0;
+  left: 0; */
+  bottom: 50px;
+  right: 50px;
+}
+
+/* footer p {
+  font-size: 16px;
+} */
+
+/* /* article header p {          Only paragraphs inside a header inside a article 
+  font-style: italic;             will get the changes. But this is not ideal 
+}                                 we should rather give the paragraph a variable and change it like that*/
+
+/*To do that we use #*/
+/* # is only for id's  */
+
+#author {
+  font-style: italic;
+  font-size: 18px;
+}
+
+#copyright {
+  font-size: 16px;
+}
+
+.post-img {
+  width: 100%;
+  height: auto;
+}
+
+/* . is used for classes */
+
+.related-author {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.related {
+  list-style: none;
+}
+
+.mdn-docs-hyperlink {
+  font-style: italic;
+}
+
+nav a:link {
+  /* display: block; this makes them block elements that occupies the whole
+  lenght of the screen as opposed to inline elements 
+  that only cover the distance of the specific elements*/
+
+  /* display:inline makes them inline level and not block level*/
+}
+
+/* div {
+  background-color: #e0e0e0;
+  border-top: 5px solid #1098ad;
+  border-bottom: 5px solid #1098ad;
+  /* border: 5px solid #1098ad;} */
+
+li:first-child {
+  font-weight: bold;
+}
+
+li:last-child {
+  font-style: italic;
+}
+
+/* ul li:first-child{
+  text-transform:uppercase;
+} */
+
+/*li:nth-child(odd) {
+  /*Can have number or other elements*/
+/*  color: red;
+}/*
+
+/* We will now be styling hyperlinks */
+
+a:link {
+  color: #1098ad;
+  text-decoration: none;
+}
+
+a:visited {
+  /* color:#777 */
+  color: #1098ad;
+}
+/* Can define style as soon as mouse hovers over anchor */
+a:hover {
+  color: orangered;
+  font-weight: bold;
+  text-decoration: underline orangered;
+}
+
+a:active {
+  background-color: black;
+  font-style: italic;
+}
+
+h1::first-letter {
+  font-style: normal;
+  margin-right: 5px;
+}
+
+/* h3 + p::first-line {
+  color: red;
+} */
+
+/* p::first-line {
+  color: red;
+} */
