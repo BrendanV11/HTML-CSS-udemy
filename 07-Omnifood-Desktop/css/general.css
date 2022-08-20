@@ -1,0 +1,379 @@
+/* --- 01 TYPOGRAPHY SYSTEM
+
+    --Font weights: 
+    Default: 400
+    Medium: 500
+    Semo-bold: 600
+    Bold: 700
+
+    --Line heights:
+    Default: 1
+    Small: 1.05
+    Paragraphs: 1.6
+
+
+    FONT SIZE SYSTEM (px)
+    10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+  
+
+--- 02 COLORS
+
+  Primary: #e67e22
+
+  Tints:
+ #fdf2e9
+  #fae5d3
+
+  Shades:#cf711f
+  Accents:
+  Greys: #555
+         #333;
+         #6f6f6f
+
+--- 05 SHADOWS
+
+--- 06 BORDER RADIUS
+
+Deault: 9px
+
+--- 07 WHITESPACE
+
+    SPACING SYSTEM (px)
+    2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+*/
+
+* {
+  margin: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  /* If you declare the fontsoze of the html document then this affects
+  the default size of the rem. This means now 1 rem unit == 10 px and not
+  16 like it was  by default */
+
+  /* Using 10px is ideal as it makes the calculations a lot easier */
+  /* font-size: 10px; */
+
+  /* It is best to deckare the font-size like this to avoid 
+  hard coding the font size and restricting the users ability
+  to chamge the font size of the browser. This is the same as declaring
+  the font size as 10px as 10px/16px = 0.625 */
+  font-size: 62.5%;
+
+  /* This is a precentage of the users browser font size settings */
+
+  /* We will now only use rem to deckare sizes instead of px as it makes
+  the fluidity better  */
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: #555;
+}
+
+/* ************************************* */
+/* GENERAL COMPONENTS */
+/* ************************************* */
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+}
+
+.grid {
+  display: grid;
+  column-gap: 6.4rem;
+  row-gap: 9.6rem;
+}
+
+.grid:not(:last-child) {
+  margin-bottom: 9.6rem;
+}
+
+/* Repeat is the same as writing 1fr 1fr */
+.grid--2-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3-cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--4-cols {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.grid--center-v {
+  align-items: center;
+}
+
+.heading-primary {
+  font-size: 5.2rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #333;
+  letter-spacing: -0.5px;
+  margin-bottom: 3.2rem;
+}
+
+.btn,
+.btn:link,
+.btn:visited {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 1.6rem 3.2rem;
+  border-radius: 0.9rem;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+
+  /* transition: all 1s; 
+  For some reason this doesnt work here like in tutorial*/
+}
+
+.btn--full:link,
+.btn--full:visited {
+  background-color: #e67e22;
+  color: #fff;
+}
+
+.btn,
+.btn--full:hover,
+.btn--full:active {
+  background-color: #cf711f;
+  color: #fff;
+
+  /* Transition is basically like a little animation that plays
+  it requires two properties in this case namely the things we actually need to animate
+  and the duration of the animation. In this case we want to animate the background
+  color so we can use all or just background-color */
+  /* transition: background-color 0.3s; */
+  transition: all 0.3s;
+}
+
+.btn--outline:link,
+.btn--outline:visited {
+  background-color: #fff;
+  color: #555;
+}
+
+.btn--form {
+  background-color: #45260a;
+  color: #fdf2e9;
+  align-self: end;
+  padding: 1.2rem;
+}
+
+.btn--form:hover {
+  background-color: #fff;
+  color: #555;
+}
+
+.btn--outline:hover,
+.btn--outline:active {
+  background-color: #fae5d3;
+  transition: background-color 0.3s;
+
+  /* border: 3px solid white; */
+
+  /* This trick to add a border inside of a box in orde to not shift
+  the entire layout when a border gets added to the outside  */
+
+  /* Inset means the shadow will be added to the inside of the element */
+  box-shadow: inset 0 0 0 3px #fff;
+}
+
+.link:link,
+.link:visited {
+  display: inline-block;
+  color: #e67e22;
+  text-decoration: none;
+  /* This takes the color that is currently the text color */
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+}
+
+.link:hover,
+.link:active {
+  color: #cf711f;
+  /* We make it transparent so that the entire layout doesnt shift by one
+  pixel if the border is completely removed */
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s;
+}
+
+.margin-right-sm {
+  /* Usually with these helper classes we really want the properties to be
+  implemented so we can use the important keyword to ensure that the styling 
+  gets applied */
+  margin-right: 1.6rem !important;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.list-icon {
+  width: 3rem;
+  height: 3rem;
+  color: #e67e22;
+}
+
+.list-item {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+/* This is on what the focus of the page is on, ie the blue border when clicking
+on a button or link for instance. It shows the user where they are currently */
+*:focus {
+  /* Outline is that blue border */
+  outline: none;
+
+  box-shadow: 0 0 0 0.8rem #e67d2296;
+}
+
+.margin-bottom-md {
+  margin-bottom: 4.8rem !important;
+}
+
+.center-text {
+  text-align: center;
+}
+
+strong {
+  font-weight: 500;
+}
+
+/**************************/
+/* HEADER */
+/**************************/
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fdf2e9;
+
+  /* Because we want header to be sticky later */
+  height: 9.6rem;
+  padding: 0 4.8rem;
+}
+
+.logo {
+  height: 2.2rem;
+}
+
+/**************************/
+/* NAVIGATION */
+/**************************/
+
+.main-nav-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 3.2rem;
+}
+
+.main-nav-link:link,
+.main-nav-link:visited {
+  display: inline-block;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 1.8rem;
+  transition: all 0.3s;
+  /* it is best to use transition here on the main part of the button */
+}
+
+.main-nav-link:hover,
+.main-nav-link:active {
+  color: #cf711f;
+}
+
+/* You can do this to increase the specificity of an element */
+/* This says that it has to have both then the properties get applied */
+.main-nav-link.nav-cta:link,
+.main-nav-link.nav-cta:visited {
+  padding: 1.2rem 2.4rem;
+  border-radius: 9px;
+  color: #fff;
+  background-color: #e67e22;
+}
+
+.main-nav-link.nav-cta:hover,
+.main-nav-link.nav-cta:active {
+  background-color: #cf711f;
+}
+
+/**************************/
+/* HERO SECTION */
+/**************************/
+
+.section-hero {
+  background-color: #fdf2e9;
+  padding: 4.8rem 0 9.6rem 0;
+}
+
+.hero {
+  max-width: 130rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9.6rem;
+  align-items: center;
+}
+
+.hero-description {
+  font-size: 2rem;
+  line-height: 1.6;
+  margin-bottom: 4.8rem;
+}
+
+.hero-img {
+  width: 100%;
+}
+
+.delivered-meals {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  margin-top: 8rem;
+}
+
+.delivered-imgs {
+  display: flex;
+}
+
+.delivered-imgs img {
+  height: 4.8rem;
+  width: 4.8rem;
+  border-radius: 50%;
+  margin-right: -1.6rem;
+  border: 3px solid #fdf2e9;
+}
+
+.delivered-imgs img:last-child {
+  margin: 0;
+}
+
+.delivered-text {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.delivered-text span {
+  color: #cf711f;
+  font-weight: 700;
+}
